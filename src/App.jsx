@@ -13,13 +13,23 @@ function App() {
   }, []);
 
   function createTask(task) {
-    setTasks([...tasks, { ...task, id: tasks.length}]); //append task to the list
+    setTasks([...tasks, { ...task, id: tasks.length }]); //append task to the list
+  }
+
+  function deleteTask(taskId) {
+    setTasks(
+      tasks.filter((task) => {
+        if (task.id !== taskId) {
+          return task;
+        }
+      })
+    ); //append task to the list
   }
 
   return (
     <div>
       <TaskForm createTask={createTask} />
-      <TaskList tasks={tasks} />
+      <TaskList tasks={tasks} deleteTask={deleteTask} />
     </div>
   );
 }
