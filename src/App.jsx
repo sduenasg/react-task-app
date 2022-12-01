@@ -18,12 +18,8 @@ function App() {
 
   function deleteTask(taskId) {
     setTasks(
-      tasks.filter((task) => {
-        if (task.id !== taskId) {
-          return task;
-        }
-      })
-    ); //append task to the list
+      tasks.filter(task => task.id !== taskId)
+    );
   }
 
   return (
