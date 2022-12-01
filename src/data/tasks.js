@@ -5,12 +5,12 @@ export const tasks = [
         description: "Mi primera tareilla"
     },
     {
-        id: 2,
+        id: 1,
         title: "Mi segunda tarea",
         description: "Mi segunda tareilla"
     },
     {
-        id: 3,
+        id: 2,
         title: "Mi tercera tarea",
         description: "Mi tercera tareilla"
     }
