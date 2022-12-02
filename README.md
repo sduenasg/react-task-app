@@ -1,6 +1,11 @@
+# README
+Task management React app using
 
--- run
+- Vite
+- Tailwind
+
+## run
 npm run dev
 
--- build
+## build
 npm run build
