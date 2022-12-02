@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { TaskContext } from "../context/TaskContext";
 
-function TaskForm({ createTask }) {
+function TaskForm() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+
+  const { createTask } = useContext(TaskContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -11,8 +14,8 @@ function TaskForm({ createTask }) {
       description: description,
     };
     createTask(newTask);
-    setTitle('')
-    setDescription('')
+    setTitle("");
+    setDescription("");
   };
 
   return (
@@ -23,7 +26,7 @@ function TaskForm({ createTask }) {
           onChange={(e) => {
             setTitle(e.target.value);
           }}
-          value = {title}
+          value={title}
           autoFocus
         />
         <textarea
@@ -31,7 +34,7 @@ function TaskForm({ createTask }) {
           onChange={(e) => {
             setDescription(e.target.value);
           }}
-          value = {description}
+          value={description}
         />
         <button>Save</button>
       </form>
