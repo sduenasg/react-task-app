@@ -5,14 +5,19 @@ export const TaskContext = createContext()
 
 export function TaskContextProvider(props) {
   const [tasks, setTasks] = useState([]);
+  const [nextId, setNextId] = useState(0);
+
 
   // runs when the component loads for the first time
   useEffect(() => {
     setTasks(data);
+    setNextId(data.length)
   }, []);
 
   function createTask(task) {
-    setTasks([...tasks, { ...task, id: tasks.length }]); //append task to the list
+
+    setTasks([...tasks, { ...task, id: nextId }]); //append task to the list
+    setNextId(nextId+1)
   }
 
   
